@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import java.awt.SystemColor;
 
 public class Medico {
 	private JFrame frame;
@@ -41,11 +42,11 @@ public class Medico {
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-
 	}
 
 	private void initializeMenubar() {
 		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBackground(SystemColor.control);
 		frame.setJMenuBar(menuBar);
 
 		this.initializeItensOfMenu(menuBar);
@@ -63,18 +64,26 @@ public class Medico {
 		JMenu mnMenuPatient = new JMenu("Pacientes");
 		mnMenuPatient.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 		menuBar.add(mnMenuPatient);
+		
+		JMenuItem mnPatientsList = new JMenuItem("Listar Pacientes");
+		mnPatientsList.setFont(new Font("Segoe UI", Font.PLAIN, 18));
+		mnMenuPatient.add(mnPatientsList);
+
+		JMenuItem mnPatientRegister = new JMenuItem("Cadastrar Pacientes");
+		mnPatientRegister.setFont(new Font("Segoe UI", Font.PLAIN, 18));
+		mnMenuPatient.add(mnPatientRegister);
 
 		JMenu mnMenuPatientCare = new JMenu("Atendimentos dos Pacientes");
 		mnMenuPatientCare.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 		mnMenuPatient.add(mnMenuPatientCare);
 
-		JMenuItem mnPatientsList = new JMenuItem("Listar Atendimentos");
-		mnPatientsList.setFont(new Font("Segoe UI", Font.PLAIN, 18));
-		mnMenuPatientCare.add(mnPatientsList);
+		JMenuItem mnAttendanceList = new JMenuItem("Listar Atendimentos");
+		mnAttendanceList.setFont(new Font("Segoe UI", Font.PLAIN, 18));
+		mnMenuPatientCare.add(mnAttendanceList);
 
-		JMenuItem mnPatientRegister = new JMenuItem("Cadastrar Atendimento");
-		mnPatientRegister.setFont(new Font("Segoe UI", Font.PLAIN, 18));
-		mnMenuPatientCare.add(mnPatientRegister);
+		JMenuItem mnAttendanceRegister = new JMenuItem("Cadastrar Atendimento");
+		mnAttendanceRegister.setFont(new Font("Segoe UI", Font.PLAIN, 18));
+		mnMenuPatientCare.add(mnAttendanceRegister);
 
 		JMenuItem mnHistoryPatient = new JMenuItem("Hist\u00F3riocos");
 		mnHistoryPatient.setFont(new Font("Segoe UI", Font.PLAIN, 18));
